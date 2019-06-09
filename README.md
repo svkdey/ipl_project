@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##get the app at : https://kkr-ipl-webapp.firebaseapp.com/
+
+
 
 ## Available Scripts
 
