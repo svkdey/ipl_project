@@ -1,0 +1,13 @@
+.articlePostData {
+    border: 1px solid #c5c5c5;
+    /* border-bottom: 0px; */
+    background: #fff;
+   
+    padding: 2px;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.articlePostData span {
+    font-weight: 500;
+}

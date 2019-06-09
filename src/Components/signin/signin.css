@@ -1,0 +1,9 @@
+#heading {
+    font-weight: 700;
+    text-align: center;
+    padding: 10px;
+}
+
+#logContainer {
+    height: 80vh;
+}
