@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 import {Link} from "react-router-dom";
-import  {TransitionGroup,CSSTransition} from 'react-transition-group';
-
-import styles from './style.css';
+// import  {TransitionGroup,CSSTransition} from 'react-transition-group';
+import Bounce from 'react-reveal/Bounce';
+// import styles from './style.css';
 import './card.css';
 import Button from './../button/button';
 import CardInfo from './../cardinfo/cardinfo';
@@ -87,14 +87,7 @@ class NewsArticle extends Component {
           case 'card1':
               template=this.state.items.map((item,i)=>{
                   return(
-                      <CSSTransition
-                       classNames={{
-                            enter:styles.newsList_wrapper,
-                            enterActive:styles.newsList_wrapper_enter
-                        }}
-                        timeout={500}
-                        key={i}
-                        >
+                      <Bounce left key={i}>
                             <div className="card w-100" >
                                 <div className="card-body">
                                         <Link to={`/articles/${item.id}`}>
@@ -104,19 +97,14 @@ class NewsArticle extends Component {
                                 </div>
                             </div>
 
-                      </CSSTransition>
+                      </Bounce>
                   )
               })
               
               break;
       case 'card2':
                template = this.state.items.map((item,i) => (
-                    <CSSTransition
-                    classNames={{
-                        enter:"newsList_wrapper",
-                        enterActive:"newsList_wrapper_enter"
-                    }}
-                    timeout={500}
+                    <Bounce left
                     key={i}
                     >
                         <Link to={`/articles/${item.id}`}>
@@ -133,7 +121,7 @@ class NewsArticle extends Component {
                                 </div>
                             </div>
                         </Link>
-                    </CSSTransition>))
+                    </Bounce>))
               
               break;
           default:
@@ -149,9 +137,9 @@ class NewsArticle extends Component {
         // console.log(this.state)
         return(
             <div>
-            <TransitionGroup>
+          
                 {this.renderNews(this.props.type)}
-            </TransitionGroup>
+           
             <Button
                     type="loadmore"
                     loadMore={()=>this.loadMore()}

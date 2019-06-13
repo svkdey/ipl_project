@@ -1,6 +1,9 @@
 import React from 'react';
+import Spin from 'react-reveal/Spin';
+
 const ContactDev =()=>{
     return(
+        <Spin>
         <div className="container jumbotron"
         style={{height:"80vh"}}> 
         <div>
@@ -15,6 +18,7 @@ const ContactDev =()=>{
         </div>
          
          </div>
+         </Spin>
     )
 }
 

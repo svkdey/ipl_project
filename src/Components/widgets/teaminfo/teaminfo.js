@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import './style.css'
-
+import Swing from 'react-reveal/Swing';
 class TeamInfo extends Component{
     teamInfoTemplate=(data)=>{
         return data.map((item,i)=>{
             // console.log(item.stats[0].wins)
          
                return(
-         <div className="articleTeamHeader" key={i}>
+                   <Swing>
+                          <div className="articleTeamHeader" key={i}>
         <div className="left2"
             style={{
                 background: `url('/images/teams/${item.logo}')`
@@ -32,7 +33,9 @@ class TeamInfo extends Component{
                 </strong>
             </div>
         </div>
-    </div>)
+    </div>
+                   </Swing>
+      )
         })
         
        

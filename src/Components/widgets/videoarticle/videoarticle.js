@@ -3,7 +3,8 @@ import {
     firebaseVideos,
     firebaseLooper,
     firebaseTeams
-} from './../../../firebase'
+} from './../../../firebase';
+
 import Button from './../button/button';
 import VideosListTemplate from './videostemplate'
 
@@ -83,7 +84,7 @@ class VideoArticle extends Component {
 
             switch(this.props.type){
                 case('card1'):
-                    template = <VideosListTemplate data={this.state.videos} teams={this.state.teams}/>
+                    template =<VideosListTemplate data={this.state.videos} teams={this.state.teams}/>
                     break;
                 default:
                     template = null

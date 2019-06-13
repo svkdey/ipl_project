@@ -3,6 +3,7 @@ import {firebaseTeams,firebaseDB,firebaseLooper,firebase} from './../../../fireb
 import TeamInfo from './../../../Components/widgets/teaminfo/teaminfo'
 import './style.css';
 import Publisher from './../../../Components/widgets/publisher/publisher'
+import Jump from 'react-reveal/Jump';
 class ArticleMainView extends Component {
 
     state = {
@@ -68,7 +69,9 @@ class ArticleMainView extends Component {
                 <TeamInfo team={this.state.team}/>
                 <Publisher date={article.date}
                     author={article.author} />
+               
                 <div className="articleBody">
+                    <Jump>
                     <h1>{article.title}</h1>
                     <div className="articleImage"
                         style={{
@@ -80,7 +83,7 @@ class ArticleMainView extends Component {
                         __html:article.body
                     }}>
                        
-                    </div>
+                    </div></Jump>
                 </div>
             </div>
         )

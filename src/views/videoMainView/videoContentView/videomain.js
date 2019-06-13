@@ -1,7 +1,7 @@
 import React from 'react';
 import {firebaseVideos,firebaseTeams,firebaseDB,firebaseLooper} from './../../../firebase'
 import TeamInfo from '../../../Components/widgets/teaminfo/teaminfo';
-
+import Pulse from 'react-reveal/Pulse';
 import "./style.css";
 import VideoRelated from './../relatedvideos/videorelated'
 class VideoMainView extends React.Component {
@@ -84,8 +84,10 @@ class VideoMainView extends React.Component {
          
          <div>
             <TeamInfo team={this.state.team}/>
+            
             <div className="videoWrapper">
-                    <h4>{article.title}</h4>
+            <Pulse>
+                <h4>{article.title}</h4>
                     <iframe
                         title="videoplayer"
                         width="100%"
@@ -93,6 +95,8 @@ class VideoMainView extends React.Component {
                         src={`https://www.youtube.com/embed/${article.url}`}
                     >
                     </iframe>
+            </Pulse>
+                    
                 </div>
                 {/* <div>Video that will run</div> */}
             <VideoRelated data={this.state.related} teams={this.state.teams}/>
